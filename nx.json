@@ -29,6 +29,15 @@
     "zod-rating-e2e": {
       "tags": [],
       "implicitDependencies": ["zod-rating"]
+    },
+    "api": {
+      "tags": []
+    },
+    "scrappers": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
