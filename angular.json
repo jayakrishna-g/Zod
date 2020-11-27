@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "projects": {
+    "zod-rating": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/zod-rating",
+      "sourceRoot": "apps/zod-rating/src",
+      "prefix": "zod",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/zod-rating",
+            "index": "apps/zod-rating/src/index.html",
+            "main": "apps/zod-rating/src/main.ts",
+            "polyfills": "apps/zod-rating/src/polyfills.ts",
+            "tsConfig": "apps/zod-rating/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/zod-rating/src/favicon.ico",
+              "apps/zod-rating/src/assets"
+            ],
+            "styles": ["apps/zod-rating/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/zod-rating/src/environments/environment.ts",
+                  "with": "apps/zod-rating/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "zod-rating:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "zod-rating:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "zod-rating:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/zod-rating/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/zod-rating/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "zod-rating-e2e": {
+      "root": "apps/zod-rating-e2e",
+      "sourceRoot": "apps/zod-rating-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/zod-rating-e2e/cypress.json",
+            "tsConfig": "apps/zod-rating-e2e/tsconfig.e2e.json",
+            "devServerTarget": "zod-rating:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zod-rating:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/zod-rating-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "zod-rating"
+}
