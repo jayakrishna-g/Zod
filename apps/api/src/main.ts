@@ -4,14 +4,23 @@
  */
 
 import * as express from 'express';
+import * as path from 'path';
 
 const app = express();
 
+app.use(express.static(__dirname + '/../zod-rating'));
+
+
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
+  res.send({ message: 'Welcome to APPPP!' });
 });
 
-const port = process.env.port || 3333;
+app.get('/*', function (req, res) {
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname + '/../zod-rating/index.html'));
+});
+
+const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
