@@ -1,1 +1,1 @@
-web: ng serve api
+web: nx serve api
