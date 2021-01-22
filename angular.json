@@ -25,7 +25,9 @@
               "apps/zod-rating/src/favicon.ico",
               "apps/zod-rating/src/assets"
             ],
-            "styles": ["apps/zod-rating/src/styles.scss"],
+            "styles": [
+              "apps/zod-rating/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -79,7 +81,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/zod-rating/src/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/zod-rating/src/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -112,7 +116,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/zod-rating-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/zod-rating-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -130,7 +136,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -155,7 +163,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -180,7 +190,9 @@
             "outputPath": "dist/apps/scrappers",
             "main": "apps/scrappers/src/main.ts",
             "tsConfig": "apps/scrappers/tsconfig.app.json",
-            "assets": ["apps/scrappers/src/assets"]
+            "assets": [
+              "apps/scrappers/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -205,7 +217,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/scrappers/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/scrappers/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -226,7 +240,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/ui/src/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -252,7 +268,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/database-helpers/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/database-helpers/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -273,14 +291,17 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/schemas/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/schemas/**/*.ts"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "db3030c1-7643-4655-8ee8-454910268cca"
   },
   "schematics": {
     "@nrwl/angular": {
