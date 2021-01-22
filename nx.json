@@ -38,6 +38,12 @@
     },
     "ui": {
       "tags": []
+    },
+    "database-helpers": {
+      "tags": []
+    },
+    "schemas": {
+      "tags": []
     }
   }
 }

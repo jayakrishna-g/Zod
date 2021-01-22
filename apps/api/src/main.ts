@@ -9,8 +9,7 @@ import * as path from 'path';
 const app = express();
 
 app.use(express.static(__dirname + '/../zod-rating'));
-
-
+const dbURL = 'mongodb+srv://zod:zodRULES@cluster0.nyxyo.mongodb.net/zodAPI?retryWrites=true&w=majority';
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to APPPP!' });
 });

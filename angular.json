@@ -242,6 +242,41 @@
           "style": "scss"
         }
       }
+    },
+    "database-helpers": {
+      "root": "libs/database-helpers",
+      "sourceRoot": "libs/database-helpers/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/database-helpers/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/database-helpers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "schemas": {
+      "root": "libs/schemas",
+      "sourceRoot": "libs/schemas/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/schemas/**/*.ts"]
+          }
+        }
+      }
     }
   },
   "cli": {

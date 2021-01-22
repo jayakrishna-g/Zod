@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zod/ui": ["libs/ui/src/index.ts"]
+      "@zod/ui": ["libs/ui/src/index.ts"],
+      "@zod/db-helpers": ["libs/database-helpers/src/index.ts"],
+      "@zod/schemas": ["libs/schemas/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
