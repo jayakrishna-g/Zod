@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "cd RestApi && npm i && cd .. &&cd Scrappers && npm i && cd .. &&cd UI && npm i && npm run build && cd ..",
+    "postinstall": "startScript.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
