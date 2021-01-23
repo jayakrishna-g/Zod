@@ -1,0 +1,29 @@
+{
+  "name": "zod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd UI && npm run build && cd ..",
+    "postinstall": "cd RestApi && npm i && cd .. &&cd Scrappers && npm i && cd .. &&cd UI && npm i && cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayakrishna-g/Zod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayakrishna-g/Zod/issues"
+  },
+  "homepage": "https://github.com/jayakrishna-g/Zod#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
