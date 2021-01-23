@@ -16,7 +16,7 @@ echo -e "***********************In UI***********************\n\n\n"
 echo -e "***********************Installing angular***********************\n\n\n"
 
 npm i -g @angular/cli@11.1.1
-npm i -g @angular-devkit/build-angular@0.1101.1
+npm install --save-dev @angular-devkit/build-angular
 
 echo -e "***********************Installed angular***********************\n\n\n"
 npm i
