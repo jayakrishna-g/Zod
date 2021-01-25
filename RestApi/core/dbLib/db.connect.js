@@ -17,6 +17,7 @@ module.exports.connect = (autoReconnect) => {
     dbOptions.auto_reconnect = autoReconnect;
 
   console.log(`DB AUTO RECONNECT: ${dbOptions.auto_reconnect}`);
+  console.log(envConfig);
   mongoose.connect(envConfig.connString, dbOptions);
 
   const db = mongoose.connection;

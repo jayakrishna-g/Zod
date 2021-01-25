@@ -119,39 +119,13 @@ exports.updateData = function (dataDetails, dataModel, cb) {
   });
 };
 
-exports.deleteData = function (id, softDelete, dataModel, cb) {
+exports.deleteData = function (id, dataModel, cb) {
   console.log(`Delete Resource ${id}`);
-  // cb(null, null); // Disabled Delete
-  if (!softDelete) {
-    dataModel.findByIdAndDelete(id, (err, qObj) => {
-      if (err || !qObj) cb(err, null);
-      else cb(err, qObj);
-    });
-  } else {
-    dataModel.findById(id, (err, qObj) => {
-      if (err) cb(err, null);
-      else {
-        qObj.isDeleted = true;
-        // Save Updated Statement
-        qObj.save((err) => {
-          cb(err, qObj);
-        });
-      }
-    });
-  }
-};
-
-exports.deleteData2 = function (id, dataModel, cb) {
-  console.log(`Delete Resource ${id}`);
-  dataModel.findById(id, (err, qObj) => {
-    if (err) cb(err, null);
-    else {
-      qObj.deleted = true;
-      // Save Updated Statement
-      qObj.save((err) => {
-        cb(err, qObj);
-      });
+  dataModel.deleteOne({ _id: id }, (err, res) => {
+    if (err) {
+      console.log(`ERROR while deleting data with id:${id} :\n${err}`);
     }
+    cb(err, res);
   });
 };
 
