@@ -19,38 +19,29 @@ const Cproblemmodel = new mongoose.Schema({
 const Cproblem = mongoose.model('Cproblem', Cproblemmodel);
 
 const contestModel = new mongoose.Schema({
-  contestId: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
   },
   startTime: {
     type: Date,
-    required: true,
   },
   endTime: {
     type: Date,
-    required: true,
   },
   url: {
     type: String,
-    required: true,
   },
   contestSite: {
     type: String,
-    required: true,
   },
   problems: {
     type: [mongoose.Schema.Types.ObjectId],
-    required: true,
-    ref: 'Cproblem',
+
+    ref: 'Problem',
   },
   leaderboardType: {
     type: leaderboardType,
-    required: true,
   },
 });
 

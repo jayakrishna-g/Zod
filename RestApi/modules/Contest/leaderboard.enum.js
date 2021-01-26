@@ -1,1 +1,1 @@
-export default Object.freeze({ ICPC: 0, IOI: 1 });
+module.exports = Object.freeze({ ICPC: 0, IOI: 1 });
