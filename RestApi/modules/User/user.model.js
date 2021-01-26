@@ -5,6 +5,10 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  userHandle: {
+    type: String,
+    default: 'anonymous',
+  },
 });
 
 // generating hash for password
