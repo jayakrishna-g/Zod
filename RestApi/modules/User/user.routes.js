@@ -11,7 +11,7 @@ router.get('/:id', (req, res) => {
   });
 });
 router.put('/:id', (req, res) => {
-  userService.updateUser(req.params.id, (err, result) => {
+  userService.updateUser(req.params.id, req.body, (err, result) => {
     if (err) {
       res.status(404).send({ message: 'User not Found' });
     } else {

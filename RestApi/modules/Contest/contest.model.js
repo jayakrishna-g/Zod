@@ -37,7 +37,7 @@ const contestModel = new mongoose.Schema({
   },
   problems: {
     type: [mongoose.Schema.Types.ObjectId],
-
+    
     ref: 'Problem',
   },
   leaderboardType: {
@@ -47,4 +47,5 @@ const contestModel = new mongoose.Schema({
 
 const Contest = mongoose.model('Contest', contestModel);
 
-module.exports = [Cproblem, Contest];
+exports.Contest = Contest;
+exports.Cproblem = Cproblem;

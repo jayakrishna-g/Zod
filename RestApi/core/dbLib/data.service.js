@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
+const mongoose = require('mongoose');
 
 exports.getAllDatas = function (dataModel, cb) {
   console.log('Getting All Data');
@@ -94,20 +95,34 @@ exports.createdata = (dataDetails, dataModel, cb) => {
   });
 };
 
+exports.updateOneById = function (id, data, dataModel, cb) {
+  if (data._id) {
+    delete data._id;
+  }
+  dataModel.findOneAndUpdate({ _id: id }, { $set: data }, (err, doc) => {
+    if (err) {
+      console.log('update is not successful' + err);
+      cb(err, null);
+    } else {
+      cb(null, doc);
+    }
+  });
+};
+
 exports.updateData = function (dataDetails, dataModel, cb) {
   if (dataDetails._id) {
     dataDetails.id = dataDetails._id;
   }
   console.log(`Edit Resource ${dataDetails.id}`);
-  console.log(JSON.stringify(dataModel));
+  console.log(JSON.stringify(dataDetails));
   dataModel.findById(dataDetails.id, (err, qObj) => {
     if (err || !qObj) cb(err, null);
     else {
       if (dataDetails._id) delete dataDetails._id;
-
+      dataDetails = dataDetails.data;
       console.log(JSON.stringify(dataDetails));
       Object.keys(dataDetails).forEach((p) => {
-        // console.log(dataDetails[p])
+        console.log(dataDetails[p]);
         if (dataDetails[p]) qObj[p] = dataDetails[p];
       });
 
@@ -121,7 +136,8 @@ exports.updateData = function (dataDetails, dataModel, cb) {
 
 exports.deleteData = function (id, dataModel, cb) {
   console.log(`Delete Resource ${id}`);
-  dataModel.deleteOne({ _id: id }, (err, res) => {
+  const ObjectId = mongoose.Types.ObjectId;
+  dataModel.deleteOne({ _id: ObjectId(id) }, (err, res) => {
     if (err) {
       console.log(`ERROR while deleting data with id:${id} :\n${err}`);
     }

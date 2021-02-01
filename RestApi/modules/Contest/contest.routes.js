@@ -4,14 +4,14 @@ const contestService = require('./contest.service');
 router.get('/:id', (req, res) => {
   contestService.readContest(req.params.id, (err, result) => {
     if (err) {
-      res.status(404).send({ message: 'Contest not Found' });
+      res.status(404).send({ message: 'Contest not Found', err });
     } else {
       res.status(200).send(result);
     }
   });
 });
 router.put('/:id', (req, res) => {
-  contestService.updateContest(req.params.id, (err, result) => {
+  contestService.updateContest(req.params.id, req.body, (err, result) => {
     if (err) {
       res.status(404).send({ message: 'Contest not Found' });
     } else {
