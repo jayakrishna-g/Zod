@@ -1,22 +1,18 @@
 const datamodel = require('../../core/dbLib/data.service');
-const Leaderboard = require('./leaderBoardCell.model');
+const LeaderboardCell = require('./leaderBoardCell.model').LeaderboardCell;
 
 module.exports.readLeaderboard = (id, cb) => {
-  datamodel.getDataById(id, Leaderboard, cb);
+  const populateQuery = [{path : 'contest'}, {path : 'user'}, {path : 'scores', populate:{ path : 'problem'}}];
+  datamodel.getDataByIdAndPopulate(LeaderboardCell, id, populateQuery, cb);
 };
 module.exports.updateLeaderboard = (id, data, cb) => {
-  datamodel.updateOneById(id, data, Leaderboard, cb);
+  datamodel.updateOneById(id, data, LeaderboardCell, cb);
 };
 
 module.exports.createLeaderboard = (newLeaderboard, cb) => {
-  const tLeaderboard = new Leaderboard(newLeaderboard);
-  tLeaderboard.password = tLeaderboard.generateHash(tLeaderboard.password);
-  tLeaderboard.save((err) => {
-    if (err) console.log(`ERROR CREATING Leaderboard ${err}`);
-    cb(err, tLeaderboard);
-  });
+  datamodel.createdata(newLeaderboard, LeaderboardCell, cb);
 };
 
 module.exports.deleteLeaderboard = (id, cb) => {
-  datamodel.deleteData(id, Leaderboard, cb);
+  datamodel.deleteData(id, LeaderboardCell, cb);
 };

@@ -2,19 +2,14 @@ const datamodel = require('../../core/dbLib/data.service');
 const Spaces = require('./spaces.model');
 
 module.exports.readSpaces = (id, cb) => {
-  datamodel.getDataById(id, Spaces, cb);
+  datamodel.getDataByIdAndPopulate(Spaces, id, [{ path : 'admin'}, {path : 'members'}] , cb);
 };
 module.exports.updateSpaces = (id, data, cb) => {
   datamodel.updateOneById(id, data, Spaces, cb);
 };
 
 module.exports.createSpaces = (newSpaces, cb) => {
-  const tSpaces = new Spaces(newSpaces);
-  tSpaces.password = tSpaces.generateHash(tSpaces.password);
-  tSpaces.save((err) => {
-    if (err) console.log(`ERROR CREATING Spaces ${err}`);
-    cb(err, tSpaces);
-  });
+  datamodel.createdata(newSpaces, Spaces, cb);
 };
 
 module.exports.deleteSpaces = (id, cb) => {

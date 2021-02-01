@@ -4,7 +4,7 @@ const spacesService = require('./spaces.service');
 router.get('/:id', (req, res) => {
   spacesService.readSpaces(req.params.id, (err, result) => {
     if (err) {
-      res.status(404).send({ message: 'Spaces not Found' });
+      res.status(404).send({ message: 'Spaces not Found',err });
     } else {
       res.status(200).send(result);
     }

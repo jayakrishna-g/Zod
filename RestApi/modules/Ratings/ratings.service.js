@@ -2,19 +2,15 @@ const datamodel = require('../../core/dbLib/data.service');
 const Rating = require('./ratings.model');
 
 module.exports.readRating = (id, cb) => {
-  datamodel.getDataById(id, Rating, cb);
+  const populateQuery = [{path : 'user'},{path : 'space'},{path : 'contests'}]
+  datamodel.getDataByIdAndPopulate(Rating, id, populateQuery, cb);
 };
 module.exports.updateRating = (id, data, cb) => {
   datamodel.updateOneById(id, data, Rating, cb);
 };
 
 module.exports.createRating = (newRating, cb) => {
-  const tRating = new Rating(newRating);
-  tRating.password = tRating.generateHash(tRating.password);
-  tRating.save((err) => {
-    if (err) console.log(`ERROR CREATING Rating ${err}`);
-    cb(err, tRating);
-  });
+  datamodel.createdata(newRating, Rating, cb);
 };
 
 module.exports.deleteRating = (id, cb) => {

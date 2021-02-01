@@ -11,8 +11,18 @@ const problemScore = mongoose.Schema({
     default: 0,
   },
   problem: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Cproblem',
+      problem:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Problem',
+        required:true
+      },
+      cAcceptance: {
+        type: Boolean,
+      },
+      score: {
+        type: Number,
+        default: 0,
+      },
   },
 });
 const leaderboardCellModel = new mongoose.Schema({
@@ -28,8 +38,18 @@ const leaderboardCellModel = new mongoose.Schema({
   },
   scores: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Cproblem',
+      problem:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Problem',
+        required:true
+      },
+      cAcceptance: {
+        type: Boolean,
+      },
+      score: {
+        type: Number,
+        default: 0,
+      },
     },
   ],
 });
@@ -37,4 +57,5 @@ const leaderboardCellModel = new mongoose.Schema({
 const ProblemScore = mongoose.model('ProblemScore', problemScore);
 const LeaderboardCell = mongoose.model('LeaderboardCell', leaderboardCellModel);
 
-module.exports = [ProblemScore, LeaderboardCell];
+exports.ProblemScore = ProblemScore,
+exports.LeaderboardCell = LeaderboardCell;
