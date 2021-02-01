@@ -15,10 +15,12 @@ const rating = mongoose.Schema({
     type: Number,
     required: true,
   },
-  contests: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'LeaderboardCell',
-  },
+  contests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'LeaderboardCell',
+    },
+  ],
   volatility: {
     type: Number,
   },

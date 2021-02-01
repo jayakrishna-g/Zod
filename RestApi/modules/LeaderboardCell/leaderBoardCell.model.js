@@ -26,10 +26,12 @@ const leaderboardCellModel = new mongoose.Schema({
     required: true,
     ref: 'User',
   },
-  scores: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Cproblem',
-  },
+  scores: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Cproblem',
+    },
+  ],
 });
 
 const ProblemScore = mongoose.model('ProblemScore', problemScore);

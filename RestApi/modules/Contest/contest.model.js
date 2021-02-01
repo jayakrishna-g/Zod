@@ -35,11 +35,12 @@ const contestModel = new mongoose.Schema({
   contestSite: {
     type: String,
   },
-  problems: {
-    type: [mongoose.Schema.Types.ObjectId],
-    
-    ref: 'Problem',
-  },
+  problems: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Cproblem',
+    },
+  ],
   leaderboardType: {
     type: leaderboardType,
   },
