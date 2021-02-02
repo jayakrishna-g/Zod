@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutAlign="space-around stretch">
+  <app-blogs fxFlex="60" cdk-scrollable></app-blogs>
+  <mat-divider [vertical]="true">
+  </mat-divider>
+  <span fxFlex></span>
+  <app-upcoming fxFlex="35" [displayedColumns]="['name','start_time', 'duration']"></app-upcoming>
+</div>

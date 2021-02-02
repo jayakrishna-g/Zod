@@ -1,0 +1,66 @@
+@import '~@angular/material/theming';
+
+:host {
+  padding: 0 !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  height: 100%;
+}
+.place-holder {
+  height: 48px !important;
+  width: 100%;
+}
+
+.side-nav-icon {
+  color: white;
+  height: 53px;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background:  rgba(0, 0, 0, 0.2);
+    @include mat-elevation(2);
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, rgba(199,236,247,1) 4%,  rgb(5, 126, 167) 6%, rgba(255,255,255,0)) !important;
+  color: white;
+  cursor: pointer;
+  @include mat-elevation(2);
+}
+
+.avatar {
+  border: 1px solid white;
+  border-radius: 100%;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+:host a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+:host a.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+:host .mat-icon {
+  height: 27px;
+  width: 27px;
+}
+
+:host .material-icons {
+  font-size: 27px;
+}

@@ -1,0 +1,19 @@
+:host {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.primary-nav-title {
+  font-weight: normal;
+  font-size: 24px;
+  color: #ffffff;
+  align-self: center;
+}
+
+.second-nav-title {
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  color: #ffffff;
+  align-self: center;
+  padding-right: 8px;
+}

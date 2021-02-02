@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.container {
+  padding: 16px 16px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: calc(100% - 64px);
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.header {
+  z-index: 2;
+}
+
+
+.main-contanier {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-image: -ms-radial-gradient(75% top, ellipse farthest-side, #55A0B9 -100%, #0077A1 40%, #006B91 75%,  #006487 calc(100% - 68px));
+  background-image: -moz-radial-gradient(75% top, ellipse farthest-side, #55A0B9 -100%, #0077A1 40%, #006B91 75%,  #006487 calc(100% - 68px));
+  background-image: -o-radial-gradient(75% top, ellipse farthest-side, #55A0B9 -100%, #0077A1 40%, #006B91 75%, #006487 calc(100% - 68px));
+  background-image: -webkit-gradient(radial, 75% top, 0, center top, 258, color-stop(-100, #55A0B9), color-stop(40, #0077A1), color-stop(75, #006B91), color-stop(100, #006487));
+  background-image: -webkit-radial-gradient(75% top, ellipse farthest-side, #55A0B9 -100%, #0077A1 40%, #006B91 75%, #006487 calc(100% - 68px));
+  background-image: radial-gradient(ellipse farthest-side at 75% top, #55A0B9 -100%, #0077A1 40%, #006B91 75%,  #006487 calc(100% - 68px));
+}
+
+.side-nav-list {
+  max-width: 53px !important;
+  min-width: 45px !important;
+}
+
+.avatar {
+  border: 1px solid white;
+  border-radius: 100%;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.flex-gap {
+  flex: 1 0 auto;
+}
+
+
+.right-bar {
+  width: 8px;
+}
