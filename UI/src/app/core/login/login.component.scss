@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+
+.login-page {
+  background-image: url("https://40obml2t8u691fd442y9pg71-wpengine.netdna-ssl.com/wp-content/uploads/login-page-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.login-container {
+  @include mat-elevation(2);
+  height: 100%;
+  background-color: rgb(255 255 255 / 7%);
+  width: 350px;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: bolder;
+  color: rgba(123, 165, 243, 0.6);
+  justify-self: center;
+  align-self: center;
+}
+
+.login-box {
+  // background-color: rgba(123, 165, 243, 0.6);
+  background-color: transparent;
+  padding: 0 5% 0 5%;
+}
+
+:host ::ng-deep .mat-form-field {
+  width: 100% !important;
+}
+
+:host ::ng-deep .mat-flat-button {
+  background-color:  rgba($color: #673ab7, $alpha: 0.7);
+}
+
+input {
+  color: aliceblue !important;
+}
+:host .mat-radio-button{
+  margin-left: 16px;
+}

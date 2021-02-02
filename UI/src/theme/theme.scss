@@ -1,0 +1,22 @@
+// Global Styles
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Quattrocento Sans', sans-serif
+}
+
+textarea {
+  min-height: 25px !important;
+}
+
+mat-tooltip-component{
+    & .mat-tooltip{
+      word-wrap: break-word;
+      white-space: pre-line;
+    }
+}

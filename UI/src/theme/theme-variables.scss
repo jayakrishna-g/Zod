@@ -1,0 +1,90 @@
+/*
+ * Application global variables.
+ */
+@import "~@angular/material/theming";
+
+$app-typography: mat-typography-config(
+  $font-family: '"Quattrocento Sans", sans-serif',
+  $input: mat-typography-level(inherit, 1.3)
+);
+
+$siemens-primary: (
+  50: #91deff,
+  100: #45c8ff,
+  200: #0db7ff,
+  300: #008ac4,
+  400: #0075a6,
+  500: #005f87,
+  600: #004968,
+  700: #00344a,
+  800: #001e2b,
+  900: #00090d,
+  A100: #87dbff,
+  A200: #21bdff,
+  A400: #0083ba,
+  A700: #0071a0,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+
+$siemens-accent: (
+  50: #ffffff,
+  100: #ffedbd,
+  200: #ffdd85,
+  300: #ffca3d,
+  400: #ffc11f,
+  500: #ffb900,
+  600: #e0a300,
+  700: #c28d00,
+  800: #a37600,
+  900: #856000,
+  A100: #ffffff,
+  A200: #ffe399,
+  A400: #ffc733,
+  A700: #ffc01a,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+// Define the palettes for your theme. For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$app-primary: mat-palette($siemens-primary, 500);
+$app-accent: mat-palette($siemens-accent, 500);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);
+
+$primary-color: mat-color($app-primary);
+$accent-color: mat-color($app-accent);
+$warn-color: mat-color($app-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);

@@ -31,7 +31,7 @@ router.delete('/:id', (req, res) => {
 router.post('/', (req, res) => {
   userService.createUser(req.body, (err, result) => {
     if (err) {
-      res.status(404).send({ message: 'User not Found' });
+      res.status(500).send({ message: 'Internal Server Error' });
     } else {
       res.status(200).send(result);
     }
