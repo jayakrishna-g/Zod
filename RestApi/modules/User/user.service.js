@@ -4,8 +4,8 @@ const User = require('./user.model');
 module.exports.readUser = (id, cb) => {
   datamodel.getDataById(id, User, cb);
 };
-module.exports.updateUser = (id, cb) => {
-  datamodel.updateData(id, User, cb);
+module.exports.updateUser = (id, data, cb) => {
+  datamodel.updateOneById(id, data, User, cb);
 };
 
 module.exports.createUser = (newUser, cb) => {
@@ -18,5 +18,5 @@ module.exports.createUser = (newUser, cb) => {
 };
 
 module.exports.deleteUser = (id, cb) => {
-  datamodel.deleteData(id, cb);
+  datamodel.deleteData(id, User, cb);
 };

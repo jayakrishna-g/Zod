@@ -5,16 +5,20 @@ const spaces = mongoose.Schema({
     type: String,
     requried: true,
   },
-  members: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'User',
-    requried: true,
-  },
-  admin: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'User',
-    required: true,
-  },
+  members: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      requried: true,
+    },
+  ],
+  admin: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+  ],
 });
 
 const Spaces = mongoose.model('Spaces', spaces);

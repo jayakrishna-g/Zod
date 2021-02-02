@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
 const leaderboardType = require('./leaderboard.enum');
 
-const Cproblemmodel = new mongoose.Schema({
-  problem: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Problem',
-    required: true,
-  },
-  cAcceptance: {
-    type: Boolean,
-  },
-  score: {
-    type: Number,
-    default: 0,
-  },
-});
+// const Cproblemmodel = new mongoose.Schema({
+//   problem: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'Problem',
+//     required: true,
+//   },
+//   cAcceptance: {
+//     type: Boolean,
+//   },
+//   score: {
+//     type: Number,
+//     default: 0,
+//   },
+// });
 
-const Cproblem = mongoose.model('Cproblem', Cproblemmodel);
+// const Cproblem = mongoose.model('Cproblem', Cproblemmodel);
 
 const contestModel = new mongoose.Schema({
   name: {
@@ -35,11 +35,22 @@ const contestModel = new mongoose.Schema({
   contestSite: {
     type: String,
   },
-  problems: {
-    type: [mongoose.Schema.Types.ObjectId],
-
-    ref: 'Problem',
-  },
+  problems: [
+    {
+      problem:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Problem',
+        required:true
+      },
+      cAcceptance: {
+        type: Boolean,
+      },
+      score: {
+        type: Number,
+        default: 0,
+      },
+    },
+  ],
   leaderboardType: {
     type: leaderboardType,
   },
@@ -47,4 +58,4 @@ const contestModel = new mongoose.Schema({
 
 const Contest = mongoose.model('Contest', contestModel);
 
-module.exports = [Cproblem, Contest];
+exports.Contest = Contest;

@@ -11,7 +11,7 @@ router.get('/:id', (req, res) => {
   });
 });
 router.put('/:id', (req, res) => {
-  problemService.updateProblem(req.params.id, (err, result) => {
+  problemService.updateProblem(req.params.id, req.body, (err, result) => {
     if (err) {
       res.status(404).send({ message: 'Problem not Found' });
     } else {
@@ -19,15 +19,19 @@ router.put('/:id', (req, res) => {
     }
   });
 });
-router.delete('/:id', (req, res) => {
-  problemService.deleteProblem(req.params.id, (err, result) => {
-    if (err) {
-      res.status(404).send({ message: 'Problem not Found' });
-    } else {
-      res.status(200).send(result);
-    }
-  });
-});
+/////////////////////////////////
+///////DELETE ROUTE//////////////
+/////////////////////////////////
+// router.delete('/:id', (req, res) => {
+//   problemService.deleteProblem(req.params.id, (err, result) => {
+//     if (err) {
+//       res.status(404).send({ message: 'Problem not Found' });
+//     } else {
+//       res.status(200).send(result);
+//     }
+//   });
+// });
+//////////////////////////////////
 router.post('/', (req, res) => {
   problemService.createProblem(req.body, (err, result) => {
     if (err) {
