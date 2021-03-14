@@ -1,0 +1,775 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>UpcomingComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/home/upcoming/upcoming.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-upcoming</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./upcoming.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./upcoming.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                            <li>
+                                <a href="#upcomingContests">upcomingContests</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(upcomingService: <a href="../injectables/UpcomingService.html">UpcomingService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>upcomingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UpcomingService.html" target="_self" >UpcomingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <b>
+                            applyFilter
+                        </b>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilter(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/UpcomingContestDetail.html" target="_self" >MatTableDataSource&lt;UpcomingContestDetail&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort</b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="upcomingContests"></a>
+                        <span class="name">
+                            <b>
+                            upcomingContests</b>
+                            <a href="#upcomingContests"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/UpcomingContestDetail.html" target="_self" >UpcomingContestDetail[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/home/upcoming/upcoming.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { UntilDestroy, untilDestroyed } from &#x27;@ngneat/until-destroy&#x27;;
+import { UpcomingContestDetail, UpcomingService } from &#x27;./upcoming.service&#x27;;
+
+@UntilDestroy()
+@Component({
+  selector: &#x27;app-upcoming&#x27;,
+  templateUrl: &#x27;./upcoming.component.html&#x27;,
+  styleUrls: [&#x27;./upcoming.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class UpcomingComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  @Input() displayedColumns?: string[] &#x3D; [
+    &#x27;name&#x27;,
+    &#x27;site&#x27;,
+    &#x27;start_time&#x27;,
+    &#x27;duration&#x27;,
+  ];
+
+  upcomingContests: UpcomingContestDetail[] &#x3D; [];
+
+  dataSource!: MatTableDataSource&lt;UpcomingContestDetail&gt;;
+
+  constructor(
+    private upcomingService: UpcomingService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator &#x3D; this.paginator;
+    this.dataSource.sort &#x3D; this.sort;
+  }
+
+  ngOnInit(): void {
+    this.upcomingContests &#x3D; this.route.snapshot.data.upcomingContests;
+    this.dataSource &#x3D; new MatTableDataSource(this.upcomingContests);
+    console.log(this.upcomingContests);
+  }
+  applyFilter(event: Event) {
+    const filterValue &#x3D; (event.target as HTMLInputElement).value;
+    this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
+
+    if (this.dataSource.filter?.length &gt; 0 &amp;&amp; this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+  &lt;mat-card-title&gt;Upcoming Contests&lt;/mat-card-title&gt;
+  &lt;mat-card-content&gt;
+    &lt;mat-form-field&gt;
+      &lt;mat-label&gt;Filter&lt;/mat-label&gt;
+      &lt;input matInput (keyup)&#x3D;&quot;applyFilter($event)&quot; placeholder&#x3D;&quot;Ex. Mia&quot; #input&gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+      &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+
+        &lt;!-- Site Column --&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;site&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Site &lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.site}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Name Column --&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Name &lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; &lt;a [href]&#x3D;&quot;row.url&quot;&gt;{{row.name}}&lt;/a&gt; &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Duration Column --&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;duration&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Duration &lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.duration | timeConversion}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;!-- Duration Column --&gt;
+        &lt;ng-container matColumnDef&#x3D;&quot;start_time&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Start Time &lt;/th&gt;
+          &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; {{row.start_time | date: &#x27;short&#x27;}} &lt;/td&gt;
+        &lt;/ng-container&gt;
+
+        &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+        &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+
+        &lt;!-- Row shown when there is no matching data. --&gt;
+        &lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+          &lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;4&quot;&gt;No data matching the filter &quot;{{input.value}}&quot;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+
+      &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[8, 16, 24, 40]&quot;&gt;&lt;/mat-paginator&gt;
+    &lt;/div&gt;
+
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./upcoming.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card>  <mat-card-title>Upcoming Contests</mat-card-title>  <mat-card-content>    <mat-form-field>      <mat-label>Filter</mat-label>      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>    </mat-form-field>    <div class="mat-elevation-z8">      <table mat-table [dataSource]="dataSource" matSort>        <!-- Site Column -->        <ng-container matColumnDef="site">          <th mat-header-cell *matHeaderCellDef mat-sort-header> Site </th>          <td mat-cell *matCellDef="let row"> {{row.site}} </td>        </ng-container>        <!-- Name Column -->        <ng-container matColumnDef="name">          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>          <td mat-cell *matCellDef="let row"> <a [href]="row.url">{{row.name}}</a> </td>        </ng-container>        <!-- Duration Column -->        <ng-container matColumnDef="duration">          <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>          <td mat-cell *matCellDef="let row"> {{row.duration | timeConversion}} </td>        </ng-container>        <!-- Duration Column -->        <ng-container matColumnDef="start_time">          <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Time </th>          <td mat-cell *matCellDef="let row"> {{row.start_time | date: \'short\'}} </td>        </ng-container>        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        <!-- Row shown when there is no matching data. -->        <tr class="mat-row" *matNoDataRow>          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>        </tr>      </table>      <mat-paginator [pageSizeOptions]="[8, 16, 24, 40]"></mat-paginator>    </div>  </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogsComponent', 'selector': 'app-blogs'},{'name': 'CodeEditorComponent', 'selector': 'code-editor'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PracticeComponent', 'selector': 'app-practice'},{'name': 'QuestionDescriptionComponent', 'selector': 'question-description'},{'name': 'ShellComponent', 'selector': 'app-shell'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SpaceCreationFormComponent', 'selector': 'app-space-creation-form'},{'name': 'SpacesComponent', 'selector': 'app-spaces'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'},{'name': 'UpcomingComponent', 'selector': 'app-upcoming'}];
+    var DIRECTIVES = [{'name': 'RunScriptsDirective', 'selector': '[runScripts]'}];
+    var ACTUAL_COMPONENT = {'name': 'UpcomingComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UpcomingComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

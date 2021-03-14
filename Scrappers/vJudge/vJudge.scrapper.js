@@ -2,6 +2,7 @@
 /* eslint-disable new-cap */
 /* eslint-disable no-unused-vars */
 const axios = require('axios');
+const cheerio = require('cheerio');
 
 const isOpencontest = (url) => true;
 
@@ -101,6 +102,24 @@ module.exports.submitSolution = async (contestId, problemId, formData) => {
   }
 };
 
+module.exports.getDescription = async (contestId, descriptionId) => {
+  try {
+    let html = await axios.get(`https://vjudge.net/contest/${contestId}`);
+    let $ = cheerio.load(html.data);
+    let ret = Array.from($('#contest-problems tbody tr .prob-origin a'));
+    let originUrl = ret[descriptionId.charCodeAt(0) - 65].attribs.href;
+    originUrl = originUrl.split('/');
+    const descriptionURL = `/${originUrl[1]}/${originUrl[2]}`;
+    html = await axios.get(`https://vjudge.net${descriptionURL}`);
+    $ = cheerio.load(html.data);
+    html = await axios.get(`https://vjudge.net${$('#frame-description')[0].attribs.src}`);
+    $ = cheerio.load(html.data);
+    ret = $('.data-json-container').text();
+    return JSON.parse(ret).sections;
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
 // this.submitSolution(
 //   419253,
 //   'A',

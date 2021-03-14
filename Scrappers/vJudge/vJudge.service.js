@@ -181,9 +181,11 @@ module.exports.getSubmissions = async (contestId) => {
 
 module.exports.submitProblem = async (contestId, problemId, solutionData) => {
   try {
-    const solutionDataString = `language=61&share=0&source=${encodeURIComponent(
+    console.log(solutionData.source);
+    const solutionDataString = `language=4003&share=0&source=${encodeURIComponent(
       solutionData.source
     )}&captcha=&password=`;
+    console.log(solutionDataString);
     const result = await scrapper.submitSolution(contestId, problemId, solutionDataString);
     return Promise.resolve(result.data);
   } catch (err) {
@@ -195,6 +197,15 @@ module.exports.getSubmissionStatus = async (runId) => {
   try {
     const result = await scrapper.getSolutionStatus(runId);
     return Promise.resolve(result.data);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
+
+module.exports.getProblemDescription = async (cId, pId) => {
+  try {
+    const result = await scrapper.getDescription(cId, pId);
+    return Promise.resolve(result);
   } catch (err) {
     return Promise.reject(err);
   }

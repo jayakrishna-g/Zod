@@ -10,8 +10,7 @@ import { TopNavComponent } from './core/shell/top-nav/top-nav.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './core/login/login.component';
 import { AuthenticationService } from './core/authentication/authentication.service';
-import { PracticeComponent } from './modules/practice/practice.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,15 +18,15 @@ import { PracticeComponent } from './modules/practice/practice.component';
     SideNavComponent,
     TopNavComponent,
     LoginComponent,
-    PracticeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    ToastrModule.forRoot(),
   ],
   providers: [AuthenticationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

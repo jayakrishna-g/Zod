@@ -1,1 +1,7 @@
-<p>practice works!</p>
+<question-description></question-description>
+<div style="height: 550px;width: 100%;">
+  <code-editor [code]="code" (submitCode) = "submit($event)"></code-editor>
+</div>
+<div *ngIf="submission | async">
+  <h1 [innerText] = "message"></h1>
+</div>

@@ -48,4 +48,16 @@ router.get('/status/:runId', (req, res) => {
       res.status(500).send({ message: 'Internal Server Error' });
     });
 });
+
+router.get('/problemDescription/:contestId/:problemId', (req, res) => {
+  vJudgeService
+    .getProblemDescription(req.params.contestId, req.params.problemId)
+    .then((result) => res.status(200).send(result))
+    .catch((err) => {
+      console.log(
+        `Error while getting VJudge Problem Submission status with RunId:${req.params.runId}\nError: ${err}`
+      );
+      res.status(500).send({ message: 'Internal Server Error' });
+    });
+});
 module.exports = router;

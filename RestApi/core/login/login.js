@@ -10,7 +10,7 @@ exports.apiLogin = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       return res
-        .status(200)
+        .status(500)
         .json({ status: false, message: 'Email not registered, please register' });
     }
     if (user.validPassword(password)) {
@@ -18,7 +18,7 @@ exports.apiLogin = async (req, res) => {
       const token = middleware.generateToken(user);
       res.status(200).json({ status: true, token, message: 'Login Successful' });
     } else {
-      res.status(200).json({ status: false, message: 'Invalid Credentials' });
+      res.status(500).json({ status: false, message: 'Invalid Credentials' });
     }
   } catch (error) {
     console.log('error', error);

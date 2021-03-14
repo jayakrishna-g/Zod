@@ -1,1 +1,22 @@
-<p>code-editor works!</p>
+<div fxFill fxLayout="column" class="mat-elevation-z4">
+  <div fxLayout="row" fxLayoutAlign="center center" style="height: 45px;background-color: #F3F7F7; border-left: 2 px;"
+    class="mat-elevation-z2">
+    <span style="font-size: large;font-weight: bold;padding-left: 1%;">
+      Code Editor
+    </span>
+    <span style="flex: 1 0 auto"></span>
+    <mat-form-field style="padding-right: 1%;">
+      <mat-select [(value)]="selectedLanguage">
+        <mat-option *ngFor="let language of languages" [value]="localSelectedLanguage">{{language}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <ngx-monaco-editor [options]="editorOptions" [(ngModel)]="localCode" (init)="editorInit($event)" fxFlex>
+  </ngx-monaco-editor>
+</div>
+
+<div style="display: flex;flex-direction: row-reverse;">
+  <button mat-raised-button (click)="submit()">
+    Submit
+  </button>
+</div>

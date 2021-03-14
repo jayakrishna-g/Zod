@@ -7,7 +7,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p ./src/tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +27,9 @@
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
     "@auth0/angular-jwt": "^5.0.2",
+    "@materia-ui/ngx-monaco-editor": "^5.0.0",
     "@ngneat/until-destroy": "^8.0.3",
+    "ngx-toastr": "^13.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

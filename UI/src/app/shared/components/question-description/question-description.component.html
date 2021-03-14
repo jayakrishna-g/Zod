@@ -1,0 +1,7 @@
+<div class="question-container">
+  <mat-card *ngFor="let section of description">
+    <mat-card-title>{{section.title}}</mat-card-title>
+    <mat-card-content runScripts [innerHtml]="section.value.content | safeHtml"></mat-card-content>
+  </mat-card>
+</div>
+

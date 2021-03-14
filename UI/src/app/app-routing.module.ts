@@ -21,6 +21,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/spaces/spaces.module').then((m) => m.SpacesModule),
       },
+      {
+        path: 'practice',
+        loadChildren: () =>
+          import('./modules/practice/practice.module').then(
+            (m) => m.PracticeModule
+          ),
+      },
     ],
   },
   {

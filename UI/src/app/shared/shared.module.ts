@@ -13,9 +13,20 @@ import { ApiInterceptor } from '../core/interceptors/api.interceptor';
 import { TokenInterceptor } from '../core/interceptors/token.interceptor';
 import { TimeConversionPipe } from './pipes/time-conversion.pipe';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
+import { MonacoEditorModule, MONACO_PATH } from '@materia-ui/ngx-monaco-editor';
+import { QuestionDescriptionComponent } from './components/question-description/question-description.component';
+import { NotificationInterceptor } from '../core/interceptors/notification.interceptor';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { RunScriptsDirective } from './directives/run-scripts.directive';
 
 @NgModule({
-  declarations: [TimeConversionPipe, CodeEditorComponent],
+  declarations: [
+    TimeConversionPipe,
+    CodeEditorComponent,
+    QuestionDescriptionComponent,
+    SafeHtmlPipe,
+    RunScriptsDirective,
+  ],
   imports: [
     CommonModule,
     MaterialModule,
@@ -23,6 +34,7 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MonacoEditorModule,
   ],
   exports: [
     MaterialModule,
@@ -32,6 +44,10 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
     HttpClientModule,
     TimeConversionPipe,
     CodeEditorComponent,
+    MonacoEditorModule,
+    QuestionDescriptionComponent,
+    SafeHtmlPipe,
+    RunScriptsDirective,
   ],
 })
 export class SharedModule {
@@ -48,6 +64,15 @@ export class SharedModule {
           provide: HTTP_INTERCEPTORS,
           useClass: TokenInterceptor,
           multi: true,
+        },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: NotificationInterceptor,
+          multi: true,
+        },
+        {
+          provide: MONACO_PATH,
+          useValue: 'https://unpkg.com/monaco-editor@0.18.1/min/vs',
         },
       ],
     };
