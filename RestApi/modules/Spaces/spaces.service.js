@@ -34,7 +34,7 @@ module.exports.deleteSpaces = (id, cb) => {
   datamodel.deleteData(id, Spaces, cb);
 };
 
-module.exports.getAllSpaces = (cb) => {
+module.exports.getAllSpaces = (userId, cb) => {
   console.log('Check');
-  datamodel.getAllDataWithPopulate(Spaces, [{ path: 'admin' }], cb);
+  datamodel.getDataWithQueryAndPopulate(Spaces, { members: userId }, [{ path: 'admin' }], cb);
 };

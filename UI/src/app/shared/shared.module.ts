@@ -18,6 +18,7 @@ import { QuestionDescriptionComponent } from './components/question-description/
 import { NotificationInterceptor } from '../core/interceptors/notification.interceptor';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { RunScriptsDirective } from './directives/run-scripts.directive';
+import { LoadingInterceptor } from '../core/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,11 @@ export class SharedModule {
         {
           provide: HTTP_INTERCEPTORS,
           useClass: NotificationInterceptor,
+          multi: true,
+        },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: LoadingInterceptor,
           multi: true,
         },
         {

@@ -22,24 +22,29 @@ export class NotificationInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       tap((evt) => {
         if (evt instanceof HttpResponse) {
-          if (evt.body && evt.body.success) {
+          console.log(evt);
+          if (evt.body && evt.body.message) {
             this.toasterService.success(
-              evt.body.success.message,
-              evt.body.success.title,
-              { positionClass: 'toast-bottom-center' }
+              evt.body.message,
+              evt.body.title,
+              { positionClass: 'toast-top-right' }
             );
           }
         }
       }),
       catchError((err: any) => {
         if (err instanceof HttpErrorResponse) {
+          console.log(err);
           try {
+            if (err.error.message.length === 0) {
+              err.error.message = 'Unknown Error Occured';
+            }
             this.toasterService.error(err.error.message, err.error.title, {
-              positionClass: 'toast-bottom-center',
+              positionClass: 'toast-top-right',
             });
           } catch (e) {
             this.toasterService.error('An error occurred', '', {
-              positionClass: 'toast-bottom-center',
+              positionClass: 'toast-top-right',
             });
           }
           //log error

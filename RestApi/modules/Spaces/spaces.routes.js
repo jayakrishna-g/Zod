@@ -4,7 +4,7 @@ const router = require('express').Router();
 const spacesService = require('./spaces.service');
 
 router.get('/all', (req, res) => {
-  spacesService.getAllSpaces((err, result) => {
+  spacesService.getAllSpaces(req.user._id, (err, result) => {
     if (err) {
       res.status(404).send({ message: 'Spaces not Found', err });
     } else {

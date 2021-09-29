@@ -39,7 +39,7 @@ exports.generateToken = (user) => {
   const token = {
     email: user.email,
     _id: user._id,
-    userName: user.name,
+    userHandle: user.userHandle,
   };
   console.log(token);
   return jwt.sign(token, envConfig.jwtSecretKey, { expiresIn: '30 days' });

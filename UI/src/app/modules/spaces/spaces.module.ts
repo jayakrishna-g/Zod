@@ -7,9 +7,10 @@ import { SpacesResolver } from './spaces.resolver';
 import { SpacesService } from './spaces.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { SpaceCreationFormComponent } from './space-creation-form/space-creation-form.component';
+import { SpaceDetailsComponent } from './space-details/space-details.component';
 
 @NgModule({
-  declarations: [SpacesComponent, SpaceCreationFormComponent],
+  declarations: [SpacesComponent, SpaceCreationFormComponent, SpaceDetailsComponent],
   imports: [CommonModule, SpacesRoutingModule, SharedModule.forRoot()],
   providers: [SpacesResolver, SpacesService],
 })

@@ -12,7 +12,7 @@
   </mat-divider>
   <br />
   <div class="grid">
-    <mat-card *ngFor="let article of blogs?.articles">
+    <mat-card *ngFor="let article of blogs?.articles" (click)="openBlog(article)">
       <img mat-card-image [src]="article?.urlToImage" />
       <mat-card-header>
         <mat-card-title>

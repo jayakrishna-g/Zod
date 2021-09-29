@@ -22,7 +22,7 @@
     <mat-card *ngFor="let space of spaces">
       <mat-card-header>
         <mat-card-title>
-          {{space?.spaceName}}
+          <a (click)="openSpace(space)">{{space?.spaceName}}</a>
         </mat-card-title>
         <mat-card-subtitle>
           Hosted By : <a>{{space?.admin?.userHandle}}</a> <!-- ToDo : Add User Component and redirect to that -->

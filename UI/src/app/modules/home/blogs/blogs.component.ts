@@ -21,4 +21,7 @@ export class BlogsComponent implements OnInit {
   ngOnInit(): void {
     this.blogs = this.route.snapshot.data.blogs;
   }
+  openBlog(blog: any) {
+    window.open(blog.url);
+  }
 }

@@ -6,6 +6,7 @@ export interface Space {
   members: any[];
   spaceName: string;
   spaceDescription?: string;
+  spaceId: string;
 }
 
 @Injectable()

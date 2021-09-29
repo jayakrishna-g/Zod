@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SpaceCreationFormComponent } from './space-creation-form/space-creation-form.component';
 import { Space, SpacesService } from './spaces.service';
@@ -13,7 +13,7 @@ import { Space, SpacesService } from './spaces.service';
 })
 export class SpacesComponent implements OnInit {
   spaces: Space[] = [];
-  constructor(private route: ActivatedRoute, private dialog: MatDialog, private spacesService: SpacesService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private dialog: MatDialog, private spacesService: SpacesService) {}
 
   ngOnInit(): void {
     this.spaces = this.route.snapshot.data.spaces;
@@ -26,11 +26,16 @@ export class SpacesComponent implements OnInit {
       this.spacesService.createSpace(formData).subscribe(res => {
         const createdSpace = (res as any).data as Space;
         createdSpace.admin = JSON.parse(localStorage.getItem('tokenData') as string);
+        console.log(createdSpace);
         if (createdSpace) {
           this.spaces.push(createdSpace);
         }
       });
     });
 
+  }
+
+  openSpace(space: Space) {
+    this.router.navigate([space.spaceId], { relativeTo: this.route });
   }
 }
