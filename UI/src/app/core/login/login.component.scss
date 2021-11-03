@@ -1,16 +1,25 @@
-@import '~@angular/material/theming';
+@use "~@angular/material" as mat;
+@import "~@angular/material/theming";
 
 .login-page {
-  // background-image: url("https://40obml2t8u691fd442y9pg71-wpengine.netdna-ssl.com/wp-content/uploads/login-page-bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #007991; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #78ffd6,
+    #007991
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #78ffd6,
+    #007991
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   width: 100%;
   height: 100%;
 }
 
 .login-container {
-  @include mat-elevation(2);
+  @include mat.elevation(2);
   height: 100%;
   background-color: rgb(255 255 255 / 7%);
   width: 350px;
@@ -19,7 +28,7 @@
 .title {
   font-size: 70px;
   font-weight: bolder;
-  color: rgba(123, 165, 243, 0.6);
+  color: rgba($color: white, $alpha: 0.7);
   justify-self: center;
   align-self: center;
 }
@@ -35,12 +44,12 @@
 }
 
 :host ::ng-deep .mat-flat-button {
-  background-color:  rgba($color: #673ab7, $alpha: 0.7);
+  background-color: rgba($color: #673ab7, $alpha: 0.7);
 }
 
 input {
-  color: aliceblue !important;
+  color: black !important;
 }
-:host .mat-radio-button{
+:host .mat-radio-button {
   margin-left: 16px;
 }

@@ -182,7 +182,7 @@ module.exports.getSubmissions = async (contestId) => {
 module.exports.submitProblem = async (contestId, problemId, solutionData) => {
   try {
     console.log(solutionData.source);
-    const solutionDataString = `language=4003&share=0&source=${encodeURIComponent(
+    const solutionDataString = `language=54&share=0&source=${encodeURIComponent(
       solutionData.source
     )}&captcha=&password=`;
     console.log(solutionDataString);

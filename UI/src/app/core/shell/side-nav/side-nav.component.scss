@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 
 :host {
@@ -23,7 +24,7 @@
   justify-content: center;
   &:hover {
     background:  rgba(0, 0, 0, 0.2);
-    @include mat-elevation(2);
+    @include mat.elevation(2);
   }
 }
 
@@ -31,7 +32,7 @@
   background: linear-gradient(90deg, rgba(199,236,247,1) 4%,  rgb(5, 126, 167) 6%, rgba(255,255,255,0)) !important;
   color: white;
   cursor: pointer;
-  @include mat-elevation(2);
+  @include mat.elevation(2);
 }
 
 .avatar {

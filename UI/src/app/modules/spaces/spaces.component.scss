@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 .grid {
   display: grid;
@@ -6,5 +7,5 @@
 }
 
 :host .mat-card:hover {
-  @include mat-elevation(12);
+  @include mat.elevation(12);
 }
